@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>اتصل بنا</title>
+  <script>
+    function sendToWhatsApp() {
+      var name = document.getElementById("name").value;
+      var phone = document.getElementById("phone").value;
+      var orderType = document.getElementById("orderType").value;
+      var adress = document.getElementById("adress").value;
+      var message = document.getElementById("message").value;
+      
+      var url = "https://wa.me/212698996918?text=" 
+                + "الاسم: " + name + "%0A"
+                + "رقم الهاتف: " + phone + "%0A"
+                + "نوع الطلب: " + orderType + "%0A"
+                + "العنوان: " + adress + "%0A"
+                + "الموضوع: " + message;
+
+      window.open(url, '_blank');
+    }
+  </script>
+</head>
+<body style="font-family: Verdana; direction: rtl; text-align: right; max-width: 500px; margin: auto;">
+  <h2>مرحبا بك، تواصل معنا</h2>
+  <label>الاسم:</label><br>
+  <input type="text" id="name" style="width: 100%;"><br><br>
+
+  <label>رقم الهاتف:</label><br>
+  <input type="text" id="phone" style="width: 100%;"><br><br>
+
+  <label>نوع الطلب:</label><br>
+  <select id="orderType" style="width: 100%;">
+    <option value="استشارة">استشارة</option>
+    <option value="طلب خدمة">طلب خدمة</option>
+    <option value="معلومة">معلومة</option>
+    <option value="أخرى">أخرى</option>
+  </select><br><br>
+
+  <label>العنوان:</label><br>
+  <textarea id="adress" style="width: 100%; height: 100px;"></textarea><br><br>
+
+  <label>الموضوع:</label><br>
+  <textarea id="message" style="width: 100%; height: 100px;"></textarea><br><br>
+
+  <button onclick="sendToWhatsApp()" style="width: 100%; padding: 10px;">أرسل عبر واتساب</button>
+</body>
+</html>
